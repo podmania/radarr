@@ -1,1 +1,3 @@
-# sonarr
+# radarr
+
+Usenet/BitTorrent movie downloader.
