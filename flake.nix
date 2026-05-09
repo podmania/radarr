@@ -17,7 +17,6 @@
         name = "radarr";
         tag = "latest";
         fromImage = base.packages.${system}.base-image;
-        copyToRoot = [ pkgs.radarr ];
         config = {
           Env = [
             "COMPlus_EnableDiagnostics=0"
