@@ -22,6 +22,7 @@
           Env = [
             "COMPlus_EnableDiagnostics=0"
             "TMPDIR=/run/radarr-temp"
+            "RADARR__UPDATE__MECHANISM=Docker"
           ];
           ExposedPorts = {
             "7878/tcp" = {};
