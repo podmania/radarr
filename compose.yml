@@ -1,0 +1,12 @@
+services:
+  radarr:
+    image: ghcr.io/podmania/radarr:latest
+    userns_mode: "keep-id"
+    container_name: radarr
+    ports:
+      - 7878:7878
+    volumes:
+      - ./config:/config
+      - ./data:/data
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped

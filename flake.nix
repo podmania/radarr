@@ -32,9 +32,7 @@
           };
           # Tell radarr to use /config as its data directory
           Cmd = [ "${pkgs.radarr}/bin/Radarr" "-data=/config" "-nobrowser" ];
-          # Distroless non‑root user
-          User = "1000";
-          WorkingDir = "/config";
+
         };
       };
     };
