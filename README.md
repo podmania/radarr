@@ -83,3 +83,5 @@ Variables use the format `RADARR__<SECTION>__<KEY>` (double underscores, case-se
 | `RADARR__UPDATE__AUTOMATICALLY` | _(platform default)_ | Auto-install updates |
 | `RADARR__UPDATE__SCRIPTPATH` | _(empty)_ | Path to custom update script |
 | `RADARR__UPDATE__BRANCH` | `master` | Update branch: `master`, `develop`, `nightly` |
+
+<a href="https://www.buymeacoffee.com/bhoehn" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
