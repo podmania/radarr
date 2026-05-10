@@ -11,6 +11,17 @@
     system = builtins.currentSystem;
     pkgs = nixpkgs.legacyPackages.${system};
     n2c = nix2container.outputs.packages.${system}.nix2container;
+    version = "6.1.1.10360";
+    srcHash = "sha256-AtvuZFAF+KJmEp46KWrA9qHv3+IejSXxUyol2W8BWdk=";
+    pkg = pkgs.radarr.overrideAttrs (old: {
+      inherit version;
+      src = pkgs.fetchFromGitHub {
+        owner = "Radarr";
+        repo = "Radarr";
+        rev = "v${version}";
+        hash = srcHash;
+      };
+    });
     imageConfig = {
       Env = [
         "COMPlus_EnableDiagnostics=0"
@@ -24,7 +35,7 @@
         "/config" = {};
         "/data" = {};
       };
-      Cmd = [ "${pkgs.radarr}/bin/Radarr" "-data=/config" "-nobrowser" ];
+      Cmd = [ "${pkg}/bin/Radarr" "-data=/config" "-nobrowser" ];
     };
   in {
     packages.${system} = {
@@ -42,11 +53,11 @@
         config = imageConfig;
       };
 
-      radarr = pkgs.radarr;
+      radarr = pkg;
 
       default = self.packages.${system}.radarr-image;
     };
 
-    radarrVersion = pkgs.radarr.version;
+    radarrVersion = version;
   };
 }
