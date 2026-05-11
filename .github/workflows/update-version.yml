@@ -11,4 +11,3 @@ jobs:
       package: radarr
       upstream: Radarr/Radarr
       tag-prefix: v
-      dep-type: dotnet
