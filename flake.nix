@@ -25,7 +25,7 @@
     imageConfig = {
       Env = [
         "COMPlus_EnableDiagnostics=0"
-        "TMPDIR=/run/radarr-temp"
+        "TMPDIR=/tmp"
         "RADARR__UPDATE__MECHANISM=Docker"
       ];
       ExposedPorts = {
